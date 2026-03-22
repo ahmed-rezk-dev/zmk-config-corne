@@ -87,10 +87,10 @@
 
         system_layer {
             bindings = <
-&kp K_SLEEP   &trans  &trans  &trans  &trans  &kp C_NEXT           &kp C_VOLUME_UP    &trans         &trans             &trans  &trans  &trans
-&kp K_COFFEE  &trans  &trans  &trans  &trans  &kp C_PREVIOUS       &kp C_VOLUME_DOWN  &trans         &trans             &trans  &trans  &trans
-&trans        &trans  &trans  &trans  &trans  &kp C_PLAY_PAUSE     &kp K_MUTE         &trans         &trans             &trans  &trans  &trans
-                              &trans  &trans  &kp K_APPLICATION    &kp LG(SPACE)      &kt LG(LS(S))  &kp LG(LC(SPACE))
+&kp K_SLEEP   &trans  &trans               &trans  &trans  &kp C_NEXT           &kp C_VOLUME_UP    &trans         &trans             &trans  &trans  &trans
+&kp K_COFFEE  &trans  &kp C_VOICE_COMMAND  &trans  &trans  &kp C_PREVIOUS       &kp C_VOLUME_DOWN  &trans         &trans             &trans  &trans  &trans
+&trans        &trans  &trans               &trans  &trans  &kp C_PLAY_PAUSE     &kp K_MUTE         &trans         &trans             &trans  &trans  &trans
+                                           &trans  &trans  &kp K_APPLICATION    &kp LG(SPACE)      &kp LG(LS(S))  &kp LG(LC(SPACE))
             >;
 
             label = "System";
