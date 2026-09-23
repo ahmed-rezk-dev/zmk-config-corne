@@ -54,13 +54,13 @@
         lower_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | GAME | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
 &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&tog 4      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
 &kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
                                         &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
             >;
@@ -94,6 +94,30 @@
             >;
 
             label = "System";
+        };
+
+        game_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  1  |  2  |  3  |  4  |  5  | BSPC |
+            // | LCTL |  A  |  S  |  D  |  F  |  G  |   |  M  |     |     |     |     | ESC  |
+            // | LSFT |  Z  |  X  |  C  |  V  |  B  |   |     |     |     |     |     |  '   |
+            //                    | EXIT | LALT | SPC |   | ENT | LSFT | RALT |
+            //
+            // PUBG gaming layer - no hold-tap modifiers!
+            //   WASD = plain keys, LCTL = crouch, LSFT = sprint, LALT = walk
+            //   Numbers moved to right side for weapon slots
+            //   M = Map (right home row, index finger)
+            //   Enter: Lower layer + top-left key (GAME toggle)
+            //   Exit:  outer-left thumb (EXIT toggle back to Base)
+
+            bindings = <
+&kp TAB     &kp Q     &kp W     &kp E     &kp R     &kp T           &kp N1    &kp N2    &kp N3    &kp N4     &kp N5    &kp BSPC
+&kp LCTRL   &kp A     &kp S     &kp D     &kp F     &kp G           &kp M     &trans    &trans    &trans     &trans    &kp ESC
+&kp LSHFT   &kp Z     &kp X     &kp C     &kp V     &kp B           &trans    &trans    &trans    &trans     &trans    &kp SQT
+                                           &tog 0    &kp LALT        &kp SPACE &kp RET   &kp LSHFT &kp RALT
+            >;
+
+            label = "Game";
         };
     };
 };
